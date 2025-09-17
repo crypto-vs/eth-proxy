@@ -158,9 +158,6 @@ def main():
     log.warning("-----------------------------------------------------------------------")
 
 def run():
-    if len(settings.WALLET) != 42 and len(settings.WALLET) != 40:
-        log.error("Wrong WALLET, please update in settings, use environment variable, or pass via command line.")
-        sys.exit()
     settings.CUSTOM_EMAIL = settings.MONITORING_EMAIL if settings.MONITORING_EMAIL and settings.MONITORING else ""
 
     fp = file("eth-proxy.pid", 'w')
